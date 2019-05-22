@@ -54,117 +54,132 @@ class Unit {
 document.addEventListener('DOMContentLoaded', () => {
   const general = new Unit('General', 'general', 'Commander', 10, 'img/general.jpg');
   general.addGeneral();
-})
+});
 
-console.log(new Unit('Knights', 'knights', 'Cavalry', 5, 'img/knights.jpg'))
+const newArmy = document.querySelector('.new-army');
 
 const knights = document.querySelectorAll('.knights');
 knights.forEach((knight) => knight.addEventListener('click', () => {
-  const knights = new Unit('Knights', 'knights', 'Cavalry', '5', 'img/knights.jpg');
-  knights.addUnit();
+  if (newArmy.childNodes.length < 12) {
+    const knights = new Unit('Knights', 'knights', 'Cavalry', '5', 'img/knights.jpg');
+    knights.addUnit();
+  } else if (newArmy.childNodes.length >= 12) return;
 }));
 
 const lightCavalry = document.querySelectorAll('.light-cavalry');
 lightCavalry.forEach((lc) => lc.addEventListener('click', () => {
-  const lightCavalry = new Unit('Light Cavalry', 'light-cavalry', 'Cavalry', 3, 'img/light-cavalry.jpg');
-  lightCavalry.addUnit();
+  if (newArmy.childNodes.length < 12) {
+    const lightCavalry = new Unit('Light Cavalry', 'light-cavalry', 'Cavalry', 3, 'img/light-cavalry.jpg');
+    lightCavalry.addUnit();
+  } else if (newArmy.childNodes.length >= 12) return;
 }));
 
 const heavyInfantry = document.querySelectorAll('.heavy-infantry');
 heavyInfantry.forEach((hi) => hi.addEventListener('click', () => {
-  const heavyInfantry = new Unit('Heavy Infantry', 'heavy-infantry', 'Infantry', 4, 'img/heavy-infantry.jpg');
-  heavyInfantry.addUnit();
+  if (newArmy.childNodes.length < 12) {
+    const heavyInfantry = new Unit('Heavy Infantry', 'heavy-infantry', 'Infantry', 4, 'img/heavy-infantry.jpg');
+    heavyInfantry.addUnit();
+  } else if (newArmy.childNodes.length >= 12) return;
 }));
 
 const lightInfantry = document.querySelectorAll('.light-infantry');
 lightInfantry.forEach((li) => li.addEventListener('click', () => {
-  const lightInfantry = new Unit('Light Infantry', 'light-infantry', 'Infantry', 1, 'img/light-infantry.jpg');
-  lightInfantry.addUnit();
+  if (newArmy.childNodes.length < 12) {
+    const lightInfantry = new Unit('Light Infantry', 'light-infantry', 'Infantry', 1, 'img/light-infantry.jpg');
+    lightInfantry.addUnit();
+  } else if (newArmy.childNodes.length >= 12) return;
 }));
 
 const bowmen = document.querySelectorAll('.bowmen');
 bowmen.forEach((bowman) => bowman.addEventListener('click', () => {
-  const bowmen = new Unit('Bowmen', 'bowmen', 'Ranged', 2, 'img/bowmen.jpg');
-  bowmen.addUnit();
+  if (newArmy.childNodes.length < 12) {
+    const bowmen = new Unit('Bowmen', 'bowmen', 'Ranged', 2, 'img/bowmen.jpg');
+    bowmen.addUnit();
+  } else if (newArmy.childNodes.length >= 12) return;
 }));
 
 const peasantBowmen = document.querySelectorAll('.peasant-bowmen');
 peasantBowmen.forEach((pb) => pb.addEventListener('click', () => {
-  const peasantBowmen = new Unit('Peasant Bowmen', 'peasant-bowmen', 'Ranged', 1, 'img/peasant-bowmen.jpg');
-  peasantBowmen.addUnit();
+  if (newArmy.childNodes.length < 12) {
+    const peasantBowmen = new Unit('Peasant Bowmen', 'peasant-bowmen', 'Ranged', 1, 'img/peasant-bowmen.jpg');
+    peasantBowmen.addUnit();
+  } else if (newArmy.childNodes.length >= 12) return;
 }));
 
 const catapult = document.querySelectorAll('.catapult');
 catapult.forEach((ctpt) => ctpt.addEventListener('click', () => {
-  const catapult = new Unit('Catapult', 'catapult', 'Siege', 4, 'img/catapult.jpg');
-  catapult.addUnit();
+  if (newArmy.childNodes.length < 12) {
+    const catapult = new Unit('Catapult', 'catapult', 'Siege', 4, 'img/catapult.jpg');
+    catapult.addUnit();
+  } else if (newArmy.childNodes.length >= 12) return;
 }));
 
 const trebuchet = document.querySelectorAll('.trebuchet');
 trebuchet.forEach((trbt) => trbt.addEventListener('click', () => {
-  const trebuchet = new Unit('Trebuchet', 'trebuchet', 'Siege', 5, 'img/trebuchet.jpg');
-  trebuchet.addUnit();
+  if (newArmy.childNodes.length < 12) {
+    const trebuchet = new Unit('Trebuchet', 'trebuchet', 'Siege', 5, 'img/trebuchet.jpg');
+    trebuchet.addUnit();
+  } else if (newArmy.childNodes.length >= 12) return;
 }));
 
 document.querySelector('.new-army').addEventListener('click', (e) => {
   const unit = new Unit;
   unit.removeUnit(e.target);
-})
+});
 
 document.querySelector('.knights').addEventListener('mouseover', (e) => {
-  const knights = new Unit('Knights', 'knights', 5, 'img/knights.jpg');
+  const knights = new Unit('Knights', 'knights', 'Cavalry', '5', 'img/knights.jpg');
   knights.showInfo(e.target);
   document.querySelector('.knights').addEventListener('mouseleave', () => {
     knights.clearInfo();
   })
 });
-
 document.querySelector('.light-cavalry').addEventListener('mouseover', (e) => {
-  const lightCavalry = new Unit('Light Cavalry', 'light-cavalry', 3, 'img/light-cavalry.jpg');
+  const lightCavalry = new Unit('Light Cavalry', 'light-cavalry', 'Cavalry', 3, 'img/light-cavalry.jpg');
   lightCavalry.showInfo(e.target);
   document.querySelector('.light-cavalry').addEventListener('mouseleave', () => {
     lightCavalry.clearInfo();
   })
-})
+});
 document.querySelector('.heavy-infantry').addEventListener('mouseover', (e) => {
-  const heavyInfantry = new Unit('Heavy Infantry', 'heavy-infantry', 4, 'img/heavy-infantry.jpg');
+  const heavyInfantry = new Unit('Heavy Infantry', 'heavy-infantry', 'Infantry', 4, 'img/heavy-infantry.jpg');
   heavyInfantry.showInfo(e.target);
   document.querySelector('.heavy-infantry').addEventListener('mouseleave', () => {
     heavyInfantry.clearInfo();
   })
-})
+});
 document.querySelector('.light-infantry').addEventListener('mouseover', (e) => {
-  const lightInfantry = new Unit('Light Infantry', 'light-infantry', 1, 'img/light-infantry.jpg');
+  const lightInfantry = new Unit('Light Infantry', 'light-infantry', 'Infantry', 1, 'img/light-infantry.jpg');
   lightInfantry.showInfo(e.target);
   document.querySelector('.light-infantry').addEventListener('mouseleave', () => {
     lightInfantry.clearInfo();
   })
-})
+});
 document.querySelector('.bowmen').addEventListener('mouseover', (e) => {
-  const bowmen = new Unit('Bowmen', 'bowmen', 1, 'img/bowmen.jpg');
+  const bowmen = new Unit('Bowmen', 'bowmen', 'Ranged', 1, 'img/bowmen.jpg');
   bowmen.showInfo(e.target);
   document.querySelector('.bowmen').addEventListener('mouseleave', () => {
     bowmen.clearInfo();
   })
-})
+});
 document.querySelector('.peasant-bowmen').addEventListener('mouseover', (e) => {
-  const peasantBowmen = new Unit('Peasant Bowmen', 'peasant-bowmen', 1, 'img/peasant-bowmen.jpg');
+  const peasantBowmen = new Unit('Peasant Bowmen', 'peasant-bowmen', 'Ranged', 1, 'img/peasant-bowmen.jpg');
   peasantBowmen.showInfo(e.target);
   document.querySelector('.peasant-bowmen').addEventListener('mouseleave', () => {
     peasantBowmen.clearInfo();
   })
-})
+});
 document.querySelector('.catapult').addEventListener('mouseover', (e) => {
-  const catapult = new Unit('Catapult', 'catapult', 4, 'img/catapult.jpg');
+  const catapult = new Unit('Catapult', 'catapult', 'Siege', 4, 'img/catapult.jpg');
   catapult.showInfo(e.target);
   document.querySelector('.catapult').addEventListener('mouseleave', () => {
     catapult.clearInfo();
   })
-})
+});
 document.querySelector('.trebuchet').addEventListener('mouseover', (e) => {
-  const trebuchet = new Unit('Trebuchet', 'trebuchet', 5, 'img/trebuchet.jpg');
+  const trebuchet = new Unit('Trebuchet', 'trebuchet', 'Siege', 5, 'img/trebuchet.jpg');
   trebuchet.showInfo(e.target);
   document.querySelector('.trebuchet').addEventListener('mouseleave', () => {
     trebuchet.clearInfo();
   })
-})
+});
